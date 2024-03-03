@@ -5,8 +5,8 @@ let students =[student1,student2, {'Name':'Sai Krupa', 'Age' :24, 'Degree':'B.Sc
 //Concatination
 let msg= 'hello'+ student1.Name;
 console.log(msg);
-let name = 'naveen';
-let msg2 = '${msg} ${name}';
+let name1 = 'naveen';
+let msg2 = `${msg} ${name1}`;
 console.log(msg2);
 
 
@@ -43,6 +43,38 @@ let mapFilter = students.filter((x)=> {
 console.log(mapFilter);
 
 // Spread operator 
+/*
 let array2 = {'Name':'Rajinikanth', 'Age' :60, 'Degree':'MBBS','class':undefined, 'State':'TamilNadu','feesPaid':true, 'Address':{'Street':'Anna Nagar', 'Pincode':'560037'}}
 let allarrays = [...students, ...array2];
 console.log(allarrays);
+*/
+//JSON
+let jsonStudents = JSON.stringify(students);
+console.log(jsonStudents)
+
+let normaliseStudents = JSON.parse(jsonStudents);
+console.log(normaliseStudents);
+
+//class
+
+class student{
+    name;
+    age;
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+        this.greet();
+    }
+    greet(){
+        console.log(`Hello  ${this.name}`);
+    }
+    greet2(){
+        return `Hello ${this.name}`;
+    }
+}
+
+let s = new student('NN',26);
+console.log(s.name);
+console.log(s.age);
+s.greet();
+console.log(s.greet2());
